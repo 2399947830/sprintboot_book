@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.fh.mapper.ProductMapper">
+
+    <select id="queryProductCount" parameterType="com.fh.entity.vo.ProductVo" resultType="java.lang.Integer">
+      select count(*) from t_product where 4=4
+    <if test="name != null and name !='' ">
+        and name like '%${name}%'
+    </if>
+    </select>
+<!--   0 1 2 3 4 5 6 7 8 9         页数是从1开始    -->
+    <select id="queryProductDataVo" parameterType="com.fh.entity.vo.ProductVo" resultType="com.fh.entity.po.Product">
+        select * from t_product where 3=3
+        <if test="name != null and name !='' ">
+            and name like '%${name}%'
+        </if>
+        limit ${size*(currPage-1)},#{size}
+    </select>
+</mapper>

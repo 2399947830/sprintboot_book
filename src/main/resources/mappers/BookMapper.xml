@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.fh.mapper.BookMapper">
+
+    <select id="queryBookCount" parameterType="com.fh.entity.vo.BookParamsVO" resultType="java.lang.Integer">
+      select count(*) from t_book where 4=4
+    <if test="name != null and name !='' ">
+        and name like '%${name}%'
+    </if>
+    <if test="beginDate != null">
+        and createDate >= #{beginDate}
+    </if>
+    <if test="endDate != null">
+        and createDate &lt;= #{endDate}
+    </if>
+    <if test="maxPrice != null">
+        and price >= #{maxPrice}
+    </if>
+    <if test="minPrice != null">
+        and price &lt;= #{minPrice}
+    </if>
+    <if test="ps != null">
+        <foreach collection="ps" item="ps">
+            and peoples like '%${ps}%'
+        </foreach>
+    </if>
+    </select>
+<!--   0 1 2 3 4 5 6 7 8 9         页数是从1开始    -->
+    <select id="queryBookDataByVo" parameterType="com.fh.entity.vo.BookParamsVO" resultType="com.fh.entity.po.Book">
+        select * from t_book where 3=3
+        <if test="name != null and name !='' ">
+            and name=#{name}
+        </if>
+        <if test="beginDate != null">
+            and createDate >= #{beginDate}
+        </if>
+        <if test="endDate != null">
+            and createDate &lt;= #{endDate}
+        </if>
+        <if test="maxPrice != null">
+            and price &lt;= #{maxPrice}
+        </if>
+        <if test="minPrice != null">
+            and price >= #{minPrice}
+        </if>
+
+        <if test="ps != null">
+        <foreach collection="ps" item="ps">
+            and peoples like '%${ps}%'
+        </foreach>
+        </if>
+        limit ${size*(currPage-1)},#{size}
+    </select>
+
+    <insert id="addBookInfo" parameterType="com.fh.entity.po.Book">
+        insert into t_book (name,price,peoples,type,createDate,area) values (#{name},#{price},#{peoples},#{type},#{createDate},#{area})
+    </insert>
+    
+    <delete id="delBookInfo" parameterType="java.lang.Integer">
+        delete from t_book where 3=3 id = #{id}
+    </delete>
+
+
+</mapper>
