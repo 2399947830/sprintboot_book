@@ -8,6 +8,7 @@ import com.fh.service.BrandService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -42,6 +43,12 @@ public class BrandServiceImpl implements BrandService {
     @Override
     public void updateProduct(Brand brand) {
         brandMapper.updateProduct(brand);
+    }
+
+    @Override
+    public void addBrand(Brand brand) {
+        brand.setAuthor("test");
+        brandMapper.addBrand(brand);
     }
 
 

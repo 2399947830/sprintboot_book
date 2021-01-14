@@ -49,6 +49,11 @@ public class BrandController {
         return CommonsReturn.success(ReturnCode.SUCCESS);
     }
 
+    @PostMapping("/addBrand")
+    public CommonsReturn addBrand(Brand brand){
+        brandService.addBrand(brand);
+        return CommonsReturn.success(ReturnCode.SUCCESS);
+    }
 
 
 }
