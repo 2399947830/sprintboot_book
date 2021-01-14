@@ -8,4 +8,6 @@ import java.util.Map;
 public interface BrandService {
 
     Map queryAllData(BrandVo vo);
+
+    void deleteBrand(Integer id);
 }

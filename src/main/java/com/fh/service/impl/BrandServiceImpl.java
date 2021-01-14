@@ -27,4 +27,11 @@ public class BrandServiceImpl implements BrandService {
         map.put("list",productList);
         return map;
     }
+
+    @Override
+    public void deleteBrand(Integer id) {
+        brandMapper.deleteBrand(id);
+    }
+
+
 }
