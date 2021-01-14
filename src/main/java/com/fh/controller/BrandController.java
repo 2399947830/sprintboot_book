@@ -1,16 +1,14 @@
 package com.fh.controller;
 
 import com.fh.entity.po.Brand;
+import com.fh.entity.po.Product;
 import com.fh.entity.vo.BrandVo;
 import com.fh.entity.vo.ProductVo;
 import com.fh.service.BrandService;
 import com.fh.utlis.result.CommonsReturn;
 import com.fh.utlis.result.ReturnCode;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
@@ -38,6 +36,19 @@ public class BrandController {
         brandService.deleteBrand(id);
         return CommonsReturn.success(ReturnCode.SUCCESS);
     }
+
+    @GetMapping("/queryBrandById")
+    public CommonsReturn queryBrandById(Integer id){
+        Brand brand =brandService.queryProductById(id);
+        return CommonsReturn.success(brand);
+    }
+
+    @PostMapping("/updateBrand")
+    public CommonsReturn updateBrand(Brand brand){
+        brandService.updateProduct(brand);
+        return CommonsReturn.success(ReturnCode.SUCCESS);
+    }
+
 
 
 }

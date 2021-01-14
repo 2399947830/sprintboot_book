@@ -1,5 +1,6 @@
 package com.fh.service.impl;
 
+import com.fh.entity.po.Brand;
 import com.fh.entity.po.Product;
 import com.fh.entity.vo.BrandVo;
 import com.fh.mapper.BrandMapper;
@@ -31,6 +32,16 @@ public class BrandServiceImpl implements BrandService {
     @Override
     public void deleteBrand(Integer id) {
         brandMapper.deleteBrand(id);
+    }
+
+    @Override
+    public Brand queryProductById(Integer id) {
+        return brandMapper.queryProductById(id);
+    }
+
+    @Override
+    public void updateProduct(Brand brand) {
+        brandMapper.updateProduct(brand);
     }
 
 
