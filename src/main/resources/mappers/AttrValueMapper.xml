@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.fh.mapper.AttrValueMapper">
+    <!--   0 1 2 3 4 5 6 7 8 9         页数是从1开始    -->
+    <select id="queryAttrValueDataVo" parameterType="com.fh.entity.po.AttrValue" resultType="com.fh.entity.po.AttrValue">
+        select  pav.id,pav.value,pav.valueCH,pav.attrId  from shop_product_brand pb  left join shop_product_attr_value pav on pb.id = pav.attrId
+         where 4=4  and  pav.attrId = #{attrId}
+    </select>
+</mapper>
