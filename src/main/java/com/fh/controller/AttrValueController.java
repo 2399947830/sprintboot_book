@@ -43,4 +43,11 @@ public class AttrValueController {
         return CommonsReturn.success(ReturnCode.SUCCESS);
     }
 
+
+    @PostMapping("/addAttrValue")
+    public CommonsReturn addAttrValue(AttrValue attrValue){
+        attrValueService.addAttrValue(attrValue);
+        return CommonsReturn.success(ReturnCode.SUCCESS);
+    }
+
 }

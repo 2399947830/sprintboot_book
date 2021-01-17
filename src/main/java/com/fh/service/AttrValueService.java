@@ -13,4 +13,6 @@ public interface AttrValueService {
     AttrValue queryAttrValueById(Integer id);
 
     void updateAttrValue(AttrValue attrValue);
+
+    void addAttrValue(AttrValue attrValue);
 }

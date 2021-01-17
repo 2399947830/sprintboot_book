@@ -2,6 +2,7 @@ package com.fh.mapper;
 
 import com.fh.entity.po.AttrValue;
 import com.fh.entity.vo.AttrValueVo;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
@@ -19,4 +20,9 @@ public interface AttrValueMapper {
     @Update("update shop_product_attr_value set value=#{value},valueCH=#{valueCH},attrId=#{attrId}," +
             " isdel=#{isdel} where id = #{id}")
     void updateAttrValue(AttrValue attrValue);
+
+    @Insert("insert into shop_product_attr_value (value,valueCH,attrId,isdel)" +
+            " values (#{value},#{valueCH},#{attrId},#{isdel})")
+    void addAttrValue(AttrValue attrValue);
+
 }

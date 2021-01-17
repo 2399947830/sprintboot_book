@@ -1,8 +1,6 @@
 package com.fh.service.impl;
 
 import com.fh.entity.po.AttrValue;
-import com.fh.entity.po.Product;
-import com.fh.entity.vo.AttrValueVo;
 import com.fh.mapper.AttrValueMapper;
 import com.fh.service.AttrValueService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,5 +37,10 @@ public class AttrValueServiceImpl implements AttrValueService {
     @Override
     public void updateAttrValue(AttrValue attrValue) {
         attrValueMapper.updateAttrValue(attrValue);
+    }
+
+    @Override
+    public void addAttrValue(AttrValue attrValue) {
+        attrValueMapper.addAttrValue(attrValue);
     }
 }
