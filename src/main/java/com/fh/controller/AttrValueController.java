@@ -6,10 +6,7 @@ import com.fh.service.AttrValueService;
 import com.fh.utlis.result.CommonsReturn;
 import com.fh.utlis.result.ReturnCode;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
@@ -25,6 +22,12 @@ public class AttrValueController {
     public CommonsReturn queryAllData(AttrValue attrValue){
         Map map = attrValueService.queryAllData(attrValue);
         return CommonsReturn.success(map);
+    }
+
+    @DeleteMapping("/deleteAttrValue")
+    public CommonsReturn deleteAttrValue(Integer id){
+        attrValueService.deleteAttrValue(id);
+        return CommonsReturn.success(ReturnCode.SUCCESS);
     }
 
 }

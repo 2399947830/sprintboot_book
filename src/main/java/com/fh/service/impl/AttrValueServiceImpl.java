@@ -25,4 +25,9 @@ public class AttrValueServiceImpl implements AttrValueService {
         map.put("list",attrValueList);
         return map;
     }
+
+    @Override
+    public void deleteAttrValue(Integer id) {
+        attrValueMapper.deleteAttrValue(id);
+    }
 }

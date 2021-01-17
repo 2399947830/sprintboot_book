@@ -7,4 +7,6 @@ import java.util.Map;
 
 public interface AttrValueService {
     Map queryAllData(AttrValue attrValue);
+
+    void deleteAttrValue(Integer id);
 }
