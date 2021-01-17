@@ -37,4 +37,10 @@ public class AttrValueController {
         return CommonsReturn.success(attrValue);
     }
 
+    @PostMapping("/updateAttrValue")
+    public CommonsReturn updateAttrValue(AttrValue attrValue){
+        attrValueService.updateAttrValue(attrValue);
+        return CommonsReturn.success(ReturnCode.SUCCESS);
+    }
+
 }

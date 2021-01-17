@@ -11,4 +11,6 @@ public interface AttrValueService {
     void deleteAttrValue(Integer id);
 
     AttrValue queryAttrValueById(Integer id);
+
+    void updateAttrValue(AttrValue attrValue);
 }

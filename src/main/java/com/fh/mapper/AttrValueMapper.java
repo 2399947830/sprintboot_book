@@ -16,5 +16,7 @@ public interface AttrValueMapper {
     @Select("select * from  shop_product_attr_value where id = #{id}")
     AttrValue queryAttrValueById(Integer id);
 
-
+    @Update("update shop_product_attr_value set value=#{value},valueCH=#{valueCH},attrId=#{attrId}," +
+            " isdel=#{isdel} where id = #{id}")
+    void updateAttrValue(AttrValue attrValue);
 }

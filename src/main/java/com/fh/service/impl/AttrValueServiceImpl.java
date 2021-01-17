@@ -35,4 +35,9 @@ public class AttrValueServiceImpl implements AttrValueService {
     public AttrValue queryAttrValueById(Integer id) {
        return attrValueMapper.queryAttrValueById(id);
     }
+
+    @Override
+    public void updateAttrValue(AttrValue attrValue) {
+        attrValueMapper.updateAttrValue(attrValue);
+    }
 }
