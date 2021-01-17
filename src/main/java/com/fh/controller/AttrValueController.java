@@ -1,6 +1,7 @@
 package com.fh.controller;
 
 import com.fh.entity.po.AttrValue;
+import com.fh.entity.po.Brand;
 import com.fh.entity.vo.AttrValueVo;
 import com.fh.service.AttrValueService;
 import com.fh.utlis.result.CommonsReturn;
@@ -28,6 +29,12 @@ public class AttrValueController {
     public CommonsReturn deleteAttrValue(Integer id){
         attrValueService.deleteAttrValue(id);
         return CommonsReturn.success(ReturnCode.SUCCESS);
+    }
+
+    @GetMapping("/queryAttrValueById")
+    public CommonsReturn queryAttrValueById(Integer id){
+        AttrValue attrValue =attrValueService.queryAttrValueById(id);
+        return CommonsReturn.success(attrValue);
     }
 
 }

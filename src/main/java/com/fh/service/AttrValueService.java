@@ -9,4 +9,6 @@ public interface AttrValueService {
     Map queryAllData(AttrValue attrValue);
 
     void deleteAttrValue(Integer id);
+
+    AttrValue queryAttrValueById(Integer id);
 }

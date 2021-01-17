@@ -30,4 +30,9 @@ public class AttrValueServiceImpl implements AttrValueService {
     public void deleteAttrValue(Integer id) {
         attrValueMapper.deleteAttrValue(id);
     }
+
+    @Override
+    public AttrValue queryAttrValueById(Integer id) {
+       return attrValueMapper.queryAttrValueById(id);
+    }
 }
