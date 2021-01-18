@@ -7,10 +7,16 @@
 
     <select id="queryBrandCount" parameterType="com.fh.entity.vo.BrandVo" resultType="java.lang.Integer">
         select count(*) from shop_product_brand where 4=4
+        <if test="name != null and name !='' ">
+            and name like '%${name}%'
+        </if>
     </select>
     <!--   0 1 2 3 4 5 6 7 8 9         页数是从1开始    -->
     <select id="queryBrandDataVo" parameterType="com.fh.entity.vo.BrandVo" resultType="com.fh.entity.po.Brand">
         select * from shop_product_brand where 3=3
+        <if test="name != null and name !='' ">
+            and name like '%${name}%'
+        </if>
         limit ${size*(currPage-1)},#{size}
     </select>
 </mapper>

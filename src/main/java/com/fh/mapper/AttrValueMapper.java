@@ -11,7 +11,7 @@ import java.util.List;
 public interface AttrValueMapper {
 
     List<AttrValue> queryAttrValueDataVo(AttrValue attrValue);
-    @Update("update shop_product_attr_value set isdel = 1")
+    @Update("update shop_product_attr_value set isdel = 0 where id = #{id}")
     void deleteAttrValue(Integer id);
 
     @Select("select * from  shop_product_attr_value where id = #{id}")

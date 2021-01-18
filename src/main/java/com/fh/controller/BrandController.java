@@ -1,9 +1,7 @@
 package com.fh.controller;
 
 import com.fh.entity.po.Brand;
-import com.fh.entity.po.Product;
 import com.fh.entity.vo.BrandVo;
-import com.fh.entity.vo.ProductVo;
 import com.fh.service.BrandService;
 import com.fh.utlis.result.CommonsReturn;
 import com.fh.utlis.result.ReturnCode;
@@ -14,6 +12,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("api/brand")
+@CrossOrigin
 public class BrandController {
 
     @Autowired
@@ -49,6 +48,10 @@ public class BrandController {
         return CommonsReturn.success(ReturnCode.SUCCESS);
     }
 
+    /*
+    * 路径： http://localhost:8082/api/brand/addBrand
+    *
+    * */
     @PostMapping("/addBrand")
     public CommonsReturn addBrand(Brand brand){
         brandService.addBrand(brand);

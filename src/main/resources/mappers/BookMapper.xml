@@ -58,7 +58,7 @@
     <insert id="addBookInfo" parameterType="com.fh.entity.po.Book">
         insert into t_book (name,price,peoples,type,createDate,area) values (#{name},#{price},#{peoples},#{type},#{createDate},#{area})
     </insert>
-    
+
     <delete id="delBookInfo" parameterType="java.lang.Integer">
         delete from t_book where 3=3 id = #{id}
     </delete>
