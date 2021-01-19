@@ -3,10 +3,12 @@ package com.fh.service;
 import com.fh.entity.po.AttrValue;
 import com.fh.entity.vo.AttrValueVo;
 
+import java.util.List;
 import java.util.Map;
 
 public interface AttrValueService {
-    Map queryAllData(AttrValue attrValue);
+
+    List<AttrValue> queryAllData(Integer attId);
 
     void deleteAttrValue(Integer id);
 

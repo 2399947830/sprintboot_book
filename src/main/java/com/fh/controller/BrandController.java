@@ -8,6 +8,7 @@ import com.fh.utlis.result.ReturnCode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -48,6 +49,12 @@ public class BrandController {
         return CommonsReturn.success(ReturnCode.SUCCESS);
     }
 
+    @GetMapping("/queryAttrByTypeId")
+    public CommonsReturn queryTypeByAttrId(Brand brand){
+        List<Brand> brandList = brandService.queryDataByTypeId(brand);
+        return CommonsReturn.success(brandList);
+    }
+
     /*
     * 路径： http://localhost:8082/api/brand/addBrand
     *
@@ -57,6 +64,8 @@ public class BrandController {
         brandService.addBrand(brand);
         return CommonsReturn.success(ReturnCode.SUCCESS);
     }
+
+
 
 
 }

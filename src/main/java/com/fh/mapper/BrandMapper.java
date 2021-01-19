@@ -31,4 +31,7 @@ public interface BrandMapper {
     @Insert("insert into shop_product_brand (name,nameCH,typeId,type,isSKU,isdel,createDate,author)" +
             " values (#{name},#{nameCH},#{typeId},#{type},#{isSKU},#{isdel},SYSDATE(),#{author})")
     void addBrand(Brand brand);
+
+    @Select("select * from shop_product_brand where typeId=#{typeId}")
+    List<Brand> queryDataByTypeId(Brand brand);
 }

@@ -1,35 +1,28 @@
 package com.fh.entity.po;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import io.swagger.annotations.Api;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
-@Api
-public class Product {
 
-    private  Integer id;
+public class ProductMain {
 
+    private Integer id;
     private String name;
-
-    private String bandE;
-
-    private String imgpath;
-
-    private String bandDesc;
-
-    private String sort;
-
-    private Integer isdel;
-
+    private String title;
+    private Integer bandId;
+    private String productdesc;
+    private Integer price;
+    private Integer stocks;
+    private Integer sortNum;
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date createDate;
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date updateDate;
-
     private String author;
+    private Integer isdel;
 
     public Integer getId() {
         return id;
@@ -47,44 +40,52 @@ public class Product {
         this.name = name;
     }
 
-    public String getBandE() {
-        return bandE;
+    public String getTitle() {
+        return title;
     }
 
-    public void setBandE(String bandE) {
-        this.bandE = bandE;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String getImgpath() {
-        return imgpath;
+    public Integer getBandId() {
+        return bandId;
     }
 
-    public void setImgpath(String imgpath) {
-        this.imgpath = imgpath;
+    public void setBandId(Integer bandId) {
+        this.bandId = bandId;
     }
 
-    public String getBandDesc() {
-        return bandDesc;
+    public String getProductdesc() {
+        return productdesc;
     }
 
-    public void setBandDesc(String bandDesc) {
-        this.bandDesc = bandDesc;
+    public void setProductdesc(String productdesc) {
+        this.productdesc = productdesc;
     }
 
-    public String getSort() {
-        return sort;
+    public Integer getPrice() {
+        return price;
     }
 
-    public void setSort(String sort) {
-        this.sort = sort;
+    public void setPrice(Integer price) {
+        this.price = price;
     }
 
-    public Integer getIsdel() {
-        return isdel;
+    public Integer getStocks() {
+        return stocks;
     }
 
-    public void setIsdel(Integer isdel) {
-        this.isdel = isdel;
+    public void setStocks(Integer stocks) {
+        this.stocks = stocks;
+    }
+
+    public Integer getSortNum() {
+        return sortNum;
+    }
+
+    public void setSortNum(Integer sortNum) {
+        this.sortNum = sortNum;
     }
 
     public Date getCreateDate() {
@@ -109,5 +110,13 @@ public class Product {
 
     public void setAuthor(String author) {
         this.author = author;
+    }
+
+    public Integer getIsdel() {
+        return isdel;
+    }
+
+    public void setIsdel(Integer isdel) {
+        this.isdel = isdel;
     }
 }

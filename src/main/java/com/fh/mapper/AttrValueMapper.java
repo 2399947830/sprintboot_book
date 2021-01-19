@@ -10,7 +10,8 @@ import java.util.List;
 
 public interface AttrValueMapper {
 
-    List<AttrValue> queryAttrValueDataVo(AttrValue attrValue);
+    @Select("select * from shop_product_brand pb  left join shop_product_attr_value pav on pb.id = pav.attrId WHERE pav.attrId=#{attrId}")
+    List<AttrValue> queryAttrValueDataVo(Integer attId);
     @Update("update shop_product_attr_value set isdel = 0 where id = #{id}")
     void deleteAttrValue(Integer id);
 

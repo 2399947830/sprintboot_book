@@ -12,7 +12,7 @@ import java.util.List;
 
 public interface ProductMapper {
 
-    @Delete("delete from t_product where id = #{id}")
+    @Delete("update t_product set isdel = 0 where id = #{id}")
     void delteProduct(Integer id);
 
     @Select("select * from t_product where id = #{id}")
@@ -24,8 +24,8 @@ public interface ProductMapper {
             " where id = #{id}")
     void updateProduct(Product product);
 
-    @Insert("insert into t_product (name,bandE,imgpath,bandDesc,sort,isdel,createDate)" +
-            " values (#{name},#{bandE},#{imgpath},#{bandDesc},#{sort},#{isdel},SYSDATE())")
+    @Insert("insert into t_product (name,bandE,bandDesc,sort,isdel,createDate,author)" +
+            " values (#{name},#{bandE},#{bandDesc},#{sort},#{isdel},SYSDATE(),#{author})")
     void addProduct(Product product);
 
     Integer queryProductCount(ProductVo vo);

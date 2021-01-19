@@ -9,6 +9,7 @@ import com.fh.utlis.result.ReturnCode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -20,9 +21,9 @@ public class AttrValueController {
     private AttrValueService attrValueService;
 
     @GetMapping("/queryAllData")
-    public CommonsReturn queryAllData(AttrValue attrValue){
-        Map map = attrValueService.queryAllData(attrValue);
-        return CommonsReturn.success(map);
+    public CommonsReturn queryAllData(Integer attId){
+        List<AttrValue> attrValueList = attrValueService.queryAllData(attId);
+        return CommonsReturn.success(attrValueList);
     }
 
     @PostMapping("/deleteAttrValue")

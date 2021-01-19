@@ -17,11 +17,8 @@ public class AttrValueServiceImpl implements AttrValueService {
     private AttrValueMapper attrValueMapper;
 
     @Override
-    public Map queryAllData(AttrValue attrValue) {
-        Map<String,Object> map = new HashMap<>();
-        List<AttrValue> attrValueList = attrValueMapper.queryAttrValueDataVo(attrValue);
-        map.put("list",attrValueList);
-        return map;
+    public List<AttrValue> queryAllData(Integer attId) {
+        return  attrValueMapper.queryAttrValueDataVo(attId);
     }
 
     @Override

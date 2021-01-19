@@ -14,12 +14,13 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/product")
+@CrossOrigin
 public class ProductController {
 
     @Autowired
     private ProductService productService;
 
-    @GetMapping("/queryProductData")
+    @PostMapping("/queryProductData")
     public CommonsReturn queryProductData(ProductVo vo){
         if (vo.getCurrPage() == null){
             return CommonsReturn.error(ReturnCode.ERROR);
@@ -31,7 +32,7 @@ public class ProductController {
         return CommonsReturn.success(map);
     }
 
-    @DeleteMapping("/delteProduct")
+    @PostMapping("/delteProduct")
     public CommonsReturn delteProduct(Integer id){
         productService.delteProduct(id);
         return CommonsReturn.success(ReturnCode.SUCCESS);

@@ -3,6 +3,7 @@ package com.fh.service;
 import com.fh.entity.po.Brand;
 import com.fh.entity.vo.BrandVo;
 
+import java.util.List;
 import java.util.Map;
 
 public interface BrandService {
@@ -16,4 +17,6 @@ public interface BrandService {
     void updateProduct(Brand brand);
 
     void addBrand(Brand brand);
+
+    List<Brand> queryDataByTypeId(Brand brand);
 }

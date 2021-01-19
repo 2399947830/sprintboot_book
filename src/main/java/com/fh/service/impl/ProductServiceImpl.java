@@ -38,6 +38,8 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public void addProduct(Product product) {
+        product.setAuthor("test");
+        product.setIsdel(1);
         productMapper.addProduct(product);
     }
 
